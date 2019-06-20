@@ -1,0 +1,5 @@
+<head>-scripts,CSS,SEO,Language
+google-emmet cheat seat
+Before code thought proces
+1. click on login button,this will call a function
+2.doLogin fun will read text box value and then check userid==password, then redirect to dashboard page else print message on login screen
