@@ -3,3 +3,25 @@ google-emmet cheat seat
 Before code thought proces
 1. click on login button,this will call a function
 2.doLogin fun will read text box value and then check userid==password, then redirect to dashboard page else print message on login screen
+base64 - images
+puppet js
+
+
+1. RWD-Bootstrap(A framwork for responsive web design)
+development environment-
+
+npm init-creates package.json e.g- name,desc,author,version,dependencies library
+npm install - to save from version conflict;
+npm update- update to new version.   // collaboration mode
+npm- it takes all things from git
+admin dashboard template
+
+H/W
+id,name,desc,price
+alt for multiple cursor,esc esc
+
+Logic
+add button need event 
+take all values or read
+store all value in onject and then in array so that sort search delete
+print object of array in table

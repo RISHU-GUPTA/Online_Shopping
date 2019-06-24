@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Online Shopping 2019</title>
+    <link rel="stylesheet" href="assets/index.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <h4 id='error'></h4>
-    <h1>Login</h1>
+    <div class="container">
+    <h4 class="alert-danger text-center" id='error'></h4>
+    <h1 id="login" class="alert-success text-center">Login</h1>
+<div class="form-group">
     <label for="">UserID</label>
-    <input id="userid" type="text" placeholder="Type UserId here"><br>
-    <label for="">Password</label
-        ><input id="password" type="password" placeholder="Type Password Here"><br>
-        <button onclick="doLogin()">Login</button><button>Reset</button>
+    <input id="userid" class="form-control" type="text" placeholder="Type UserId here">
+</div>
+<div class="form-group">
+    <label for="">Password</label>
+    <input id="password" class="form-control" type="password" placeholder="Type Password Here">
+</div>
+        <div class="form-group">
+        <button class="btn btn-success" onclick="doLogin()">Login</button>
+        <button class="btn btn-danger">Reset</button>
+    </div>
         <script src="scripts/login.js"></script>
+    </div>
 </body>
 </html>
