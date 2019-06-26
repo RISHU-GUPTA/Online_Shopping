@@ -25,3 +25,6 @@ add button need event
 take all values or read
 store all value in onject and then in array so that sort search delete
 print object of array in table
+
+immediate invoke function
+autogenerate-suspend and generate

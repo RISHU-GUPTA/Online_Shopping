@@ -35,6 +35,8 @@
     <script src="scripts/admin/crud/models/product.js"></script>
     <script src="scripts/admin/crud/models/productoperations.js"></script>
     <script src="scripts/admin/crud/controllers/productcontroller.js"></script>
+    <script src="scripts/login.js"></script>
+    <script src="https://kit.fontawesome.com/d4aa8c1358.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -42,7 +44,7 @@
   <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#">Sign out</a>
+      <a class="nav-link" onclick="signout()" href="#">Sign out</a>
     </li>
   </ul>
 </nav>
@@ -143,7 +145,7 @@
 <div>
   <div class="form-group">
     <label for="">Id</label>
-    <input id="id" type="text" class="form-control" placeholder="Type ID">
+    <input id="id"  class="form-control" value="1001" disabled>
   </div>
   <div class="form-group">
     <label for="">Name</label>
@@ -166,24 +168,25 @@
     <input id="color" type="color" class="form-control">
   </div>
   <div class="form-group">
-    <button id="add" class="btn btn-primary">Add</button>
-    <button class="btn btn-danger">Delete</button>
-    <button class="btn btn-info">Update</button>
-    <button class="btn btn-success">Save</button>
-    <button class="btn btn-warning">Search</button>
-    <button class="btn btn-primary">Sort</button>
-    <button class="btn btn-info">Load</button>
-    <button class="btn btn-secondary">Clear All</button>
+    <button id="add" class="btn btn-primary"><i class="fas fa-plus-square"></i>&nbsp;Add</button>
+    <button class="btn btn-danger"><i class="fas fa-trash-alt"></i> &nbsp;Delete</button>
+    <button class="btn btn-info"><i class="fas fa-pen-alt"></i>&nbsp;Update</button>
+    <button class="btn btn-success"><i class="fas fa-save"></i>&nbsp;Save</button>
+    <button class="btn btn-warning"><i class="fas fa-search"></i>&nbsp;Search</button>
+    <button class="btn btn-primary"><i class="fas fa-sort"></i>&nbsp;Sort</button>
+    <button class="btn btn-info"><i class="fas fa-truck-loading"></i>&nbsp;Load</button>
+    <button class="btn btn-secondary"><i class="fas fa-trash"></i>&nbsp;Clear All</button>
   </div>
   <table class="table table-bordered">
     <thead class="thead-dark">
       <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Price</th>
         <th>Desc</th>
+        <th>Price</th>
         <th>URL</th>
         <th>Color</th>
+        <th>Operations</th>
       </tr>
     </thead>
     <h2  class="form-group">Total Records : <span id="countrecord"></span></h2>

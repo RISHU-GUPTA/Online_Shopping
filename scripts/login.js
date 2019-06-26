@@ -13,3 +13,7 @@ function doLogin(){
         document.getElementById('error').innerHTML=message;
     }
 }
+//signout
+function signout(){
+    location.href="index.html";
+}
