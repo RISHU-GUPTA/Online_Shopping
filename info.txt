@@ -28,3 +28,18 @@ print object of array in table
 
 immediate invoke function
 autogenerate-suspend and generate
+
+
+search press div open -- dropdown and text box--price and name
+tab out --change event
+single search function--no if else no switch;--filter use;
+
+
+sort -1 function-if else
+.dotfocus
+
+
+local storage and session storage in form of text or string 
+
+object to string- serialisation(json.stingfy) and vice versa id deserialisation(json.parse);
+notification

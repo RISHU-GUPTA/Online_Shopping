@@ -54,6 +54,7 @@ productOperations.toggleMark(id);
 }
 
 var productObject;
+
 function edit(){
 console.log("edit is ",this);
 var productid=this.getAttribute('pid');
@@ -76,11 +77,11 @@ function fillInputs(productObject){
 
 function update(){
   for(let key  in productObject){
-      if(key=='id'){
-          productObject[key] =  document.querySelector("#"+key).innerText;
-      continue;
-      }
-      if(key=='markForDelete'){
+      // if(key=='id'){
+      //     productObject[key] =  document.querySelector("#"+key).innerText;
+      // continue;
+      // }
+      if(key=='markForDelete' || key=='id'){
           continue;
       }
       productObject[key] = document.querySelector("#"+key).value;
@@ -95,7 +96,7 @@ function createIcon(Name,fn,id){
   icon.classList.add('hand');
   icon.setAttribute("pid",id);
   icon.addEventListener('click',fn);
-   return icon;
+  return icon;
 }
 
 function printProduct(product){

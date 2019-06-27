@@ -38,6 +38,7 @@
     <script src="scripts/admin/crud/controllers/productcontroller.js"></script>
     <script src="scripts/login.js"></script>
     <script src="https://kit.fontawesome.com/d4aa8c1358.js"></script>
+    <!-- <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css"> -->
   </head>
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -172,10 +173,10 @@
     <button id="add" class="btn btn-primary"><i class="fas fa-plus-square"></i>&nbsp;Add</button>
     <button id="delete" class="btn btn-danger"><i class="fas fa-trash-alt"></i> &nbsp;Delete</button>
     <button id="update" class="btn btn-info"><i class="fas fa-pen-alt"></i>&nbsp;Update</button>
-    <button class="btn btn-success"><i class="fas fa-save"></i>&nbsp;Save</button>
+    <button id="save"class="btn btn-success"><i class="fas fa-save"></i>&nbsp;Save</button>
     <button class="btn btn-warning"><i class="fas fa-search"></i>&nbsp;Search</button>
     <button class="btn btn-primary"><i class="fas fa-sort"></i>&nbsp;Sort</button>
-    <button class="btn btn-info"><i class="fas fa-truck-loading"></i>&nbsp;Load</button>
+    <button id="load" class="btn btn-info"><i class="fas fa-truck-loading"></i>&nbsp;Load</button>
     <button class="btn btn-secondary"><i class="fas fa-trash"></i>&nbsp;Clear All</button>
   </div>
   <table class="table table-bordered">
@@ -190,7 +191,7 @@
         <th>Operations</th>
       </tr>
     </thead>
-    <h2  class="form-group">Total Records : <span id="countrecord"></span></h2>
+    <h2  class="form-group">Total Records : <span id="countrecord"></span> Mark Records :<span id="mark"></span> Unmark Records : <span id="unmark"></span></h2>
     <tbody id="products">
       <!--Here we show Records-->
 
