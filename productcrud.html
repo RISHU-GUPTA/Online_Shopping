@@ -159,7 +159,8 @@
   </div>
   <div class="form-group">
     <label for="">Price</label>
-    <input id="price" type="range" class="form-control" min="100" max="10000">
+    <input type="range" class="form-control"  id="price" value="5000" min="100" max="10000" oninput="ageOutputId.value = price.value">
+    <output  id="ageOutputId">5000</output>
   </div>
   <div class="form-group">
     <label for="">URL</label>
