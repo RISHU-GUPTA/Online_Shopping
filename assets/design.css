@@ -10,3 +10,6 @@
 .hand{
     cursor: pointer;
 }
+.tooglebox{
+    display:none;
+}

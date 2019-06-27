@@ -175,10 +175,18 @@
     <button id="delete" class="btn btn-danger"><i class="fas fa-trash-alt"></i> &nbsp;Delete</button>
     <button id="update" class="btn btn-info"><i class="fas fa-pen-alt"></i>&nbsp;Update</button>
     <button id="save"class="btn btn-success"><i class="fas fa-save"></i>&nbsp;Save</button>
-    <button class="btn btn-warning"><i class="fas fa-search"></i>&nbsp;Search</button>
+    <button id="search" class="btn btn-warning"><i class="fas fa-search"></i>&nbsp;Search</button>
     <button class="btn btn-primary"><i class="fas fa-sort"></i>&nbsp;Sort</button>
     <button id="load" class="btn btn-info"><i class="fas fa-truck-loading"></i>&nbsp;Load</button>
     <button class="btn btn-secondary"><i class="fas fa-trash"></i>&nbsp;Clear All</button>
+  </div>
+  <div id='searchbox' class="tooglebox">
+    Search By <select  id="searchby">
+      <option value="-1">Select</option>
+      <option value="name">By Name</option>
+      <option value="price">By Price</option>
+    </select>
+    <input id='searchValue' type="text" placeholder="Type to Search">
   </div>
   <table class="table table-bordered">
     <thead class="thead-dark">

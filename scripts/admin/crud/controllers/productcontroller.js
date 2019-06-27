@@ -24,10 +24,28 @@ function deleteProduct(){
  
   }
 
+  function showHide(){
+    document.querySelector('#searchbox').classList.toggle('tooglebox');
+  }
+
+function searchThings(){
+  var val=document.querySelector('#searchValue').value;
+  console.log(val);
+  var option=document.querySelector('#searchby').value;
+  console.log(option);
+  if(option!=-1){
+    var subarray=productOperations.search(option,val);
+    console.log(subarray);
+    printProducts(subarray);
+  }
+ }
+
 function registerEvents(){
 document.getElementById('add').addEventListener('click',addProduct);
 document.getElementById('delete').addEventListener('click',deleteProduct);
 document.getElementById('update').addEventListener('click',update);
+document.getElementById('search').addEventListener('click',showHide);
+document.getElementById('searchValue').addEventListener('change',searchThings);
 
 }
 

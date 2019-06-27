@@ -15,21 +15,12 @@ const productOperations = {
     edit(id){
         var pedit=this.products.find(product=>product.id==id);
         return pedit;
-        // console.log("pedit is",pedit);
-        // for(let key in pedit){
-        //     if(key=='markForDelete'){
-        //         continue;
-        //     }
-        //     if(key=='price'){
-        //         continue;
-        //     }
-        //     // if(key=='color'){
-        //     //     continue;
-        //     // }
-        // document.getElementById(key).innerText=pedit[key];
-        // }
     },
-    search(){
+    search(option,val){
+        if(!val){
+            return this.products;
+        }
+        return this.products.filter(thing=>thing[option]==val); //if string put []
     
     },
     update(){
