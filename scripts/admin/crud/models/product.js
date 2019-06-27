@@ -6,6 +6,7 @@ class Product{
         this.price = price;
         this.url = url;
         this.color = color;
+        this.markForDelete=false;
     }
 }
 //calls many times so n objects will be created so this method of claasical approach
