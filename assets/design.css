@@ -13,3 +13,9 @@
 .tooglebox{
     display:none;
 }
+/* #btnup,
+#btndown {
+  display: flex;
+  justify-content: center;  Horizontal alignment 
+  align-items: center;  Vertical alignment 
+} */

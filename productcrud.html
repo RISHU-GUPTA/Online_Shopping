@@ -37,7 +37,10 @@
     <script src="scripts/admin/crud/models/productoperations.js"></script>
     <script src="scripts/admin/crud/controllers/productcontroller.js"></script>
     <script src="scripts/login.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script src="scripts/utils/firebase.js"></script>
     <script src="https://kit.fontawesome.com/d4aa8c1358.js"></script>
+    
     <!-- <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css"> -->
   </head>
   <body>
@@ -176,9 +179,11 @@
     <button id="update" class="btn btn-info"><i class="fas fa-pen-alt"></i>&nbsp;Update</button>
     <button id="save"class="btn btn-success"><i class="fas fa-save"></i>&nbsp;Save</button>
     <button id="search" class="btn btn-warning"><i class="fas fa-search"></i>&nbsp;Search</button>
-    <button class="btn btn-primary"><i class="fas fa-sort"></i>&nbsp;Sort</button>
+    <button id="sort" class="btn btn-primary"><i class="fas fa-sort"></i>&nbsp;Sort</button>
     <button id="load" class="btn btn-info"><i class="fas fa-truck-loading"></i>&nbsp;Load</button>
-    <button class="btn btn-secondary"><i class="fas fa-trash"></i>&nbsp;Clear All</button>
+    <button id="clear" class="btn btn-secondary"><i class="fas fa-trash"></i>&nbsp;Clear All</button>
+    <button id="savetoserver" class="btn btn-success"><i class="fas fa-save"></i>&nbsp;Save To Server</button>
+    <button id="loadfromserver" class="btn btn-primary"><i class="fas fa-truck-loading"></i>&nbsp;Load From Server</button>
   </div>
   <div id='searchbox' class="tooglebox">
     Search By <select  id="searchby">
@@ -192,9 +197,9 @@
     <thead class="thead-dark">
       <tr>
         <th>ID</th>
-        <th>Name</th>
+        <th>Name&nbsp;&nbsp;<i id="btnup" class="fas fa-sort-up hand"></i><i id="btndown" class="fas fa-sort-down hand"></i></th>
         <th>Desc</th>
-        <th>Price</th>
+        <th>Price&nbsp;&nbsp;<i class="fas fa-sort-up hand"></i><i class="fas fa-sort-down hand"></i></th>
         <th>URL</th>
         <th>Color</th>
         <th>Operations</th>

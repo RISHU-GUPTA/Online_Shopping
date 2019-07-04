@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Async</title>
+</head>
+<body>
+    <div>
+        Count is <span id="small"></span>
+    </div>
+    <div id="big">
+
+    </div>
+    <button onclick="smallfun()">Small function</button>
+    <button onclick="bigfun()">Big function</button>
+<script>
+    var count=1;
+function smallfun(){
+document.getElementById('small').innerHTML=count;
+count++;
+}
+function bigfun(){
+    setTimeout(function(){
+        console.log("big function starts");
+    for(let i=0;i<100000;i++){
+        for(let j=0;j<100000;j++){
+
+        }
+    }
+    console.log("big function ends");
+document.getElementById('big').innerHTML="Big function comes to end";
+    },6000);
+    
+}
+
+
+</script>
+</body>
+</html>

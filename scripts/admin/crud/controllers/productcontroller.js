@@ -40,12 +40,85 @@ function searchThings(){
   }
  }
 
+ function saveProduct(){
+  if(localStorage){
+    localStorage.products = JSON.stringify(productOperations.products);
+    alert("Record Saved...");
+}
+else{
+    alert("Ur Browser is Outdated....");
+}
+ }
+
+ function loadProduct(){
+  if(localStorage){
+    if(localStorage.products){
+        productOperations.products = JSON.parse(localStorage.products);
+        printProducts( productOperations.products);
+      //  showRecordCounts();
+    }
+    else{
+        alert("No Data to Load");
+    }
+}
+else{
+    alert("Ur Browser is Outdated....");
+}
+ }
+
+function clearAll(){
+  document.querySelector('#name').value="";
+  document.querySelector('#desc').value="";
+  document.querySelector('#url').value="";
+  document.querySelector('#color').value="#ffff";
+  document.querySelector('#price').value=100;
+  document.getElementById("name").focus();
+
+}
+
+function sortProduct(){
+  productOperations.sort();
+  printProducts(productOperations.products);
+}
+
+function saveToServer(){
+  var productarray=productOperations.products;
+  for(let product of productarray){
+    firebase.database().ref('/products/'+product.id).set(product);
+  }
+}
+
+function clone(fireBaseObject){
+  var productObject = new Product(fireBaseObject.id,fireBaseObject.name,fireBaseObject.desc,fireBaseObject.price, fireBaseObject.url, fireBaseObject.color);
+  productOperations.add(productObject);
+}
+
+function loadFromServer(){
+  productOperations.products=[];
+  var products=firebase.database().ref('/products');
+  products.on('value',(snapshot)=>{
+    let prods=snapshot.val();
+    for(let key in prods){
+      let fireBaseProductObject =  prods[key];
+      clone(fireBaseProductObject);
+    }
+    printProducts(productOperations.products);
+  })
+
+}
+
 function registerEvents(){
+document.getElementById('savetoserver').addEventListener('click',saveToServer);
+document.getElementById('loadfromserver').addEventListener('click',loadFromServer);
 document.getElementById('add').addEventListener('click',addProduct);
 document.getElementById('delete').addEventListener('click',deleteProduct);
 document.getElementById('update').addEventListener('click',update);
 document.getElementById('search').addEventListener('click',showHide);
 document.getElementById('searchValue').addEventListener('change',searchThings);
+document.getElementById('save').addEventListener('click',saveProduct);
+document.getElementById('load').addEventListener('click',loadProduct);
+document.getElementById('clear').addEventListener('click',clearAll);
+document.getElementById('sort').addEventListener('click',sortProduct);
 
 }
 

@@ -36,10 +36,17 @@ single search function--no if else no switch;--filter use;
 
 
 sort -1 function-if else
-.dotfocus
+.focus()
 
 
 local storage and session storage in form of text or string 
 
 object to string- serialisation(json.stingfy) and vice versa id deserialisation(json.parse);
 notification
+
+.-string;
+special,numeric,dynamic-[]
+
+https://www.linkedin.com/learning/html5-file-api
+
+firebase.database().ref('/products/'+id).set(productObject);

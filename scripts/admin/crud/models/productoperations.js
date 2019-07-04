@@ -27,7 +27,7 @@ const productOperations = {
     
     },
     sort(){
-    
+    this.products= this.products.sort((a,b)=>a.name.localeCompare(b.name));
     }
 }
 //to prevent it from global functions we make object
