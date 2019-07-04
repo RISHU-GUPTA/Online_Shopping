@@ -17,3 +17,18 @@ function doLogin(){
 function signout(){
     location.href="index.html";
 }
+
+function doSignup(){
+    console.log("do sigup clicked");
+    var user=new User();
+    console.log("user object formed",user);
+    for(let key in user){
+        user[key]=document.getElementById(key).value;
+    }
+    console.log("user object got value",user);
+    useroperation.add(user);
+    var userarray=useroperation.user;
+    for(let user of userarray){
+        firebase.database().ref('/users/user '+user.id).set(user);
+    }
+   }
