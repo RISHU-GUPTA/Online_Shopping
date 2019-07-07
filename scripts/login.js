@@ -1,25 +1,51 @@
 function doLogin(){
     var userid=document.getElementById('userid').value;
     var password=document.getElementById('password').value;
+if(userid=='Admin' && password=='Admin123'){
+    location.href="dashboard.html";
+}
+else{
+    var users=firebase.database().ref('/users');
+    console.log(users);
+    users.on('value',(snapshot)=>{
+        let prods=snapshot.val();
+
+const values = Object.values(prods)
+console.log(values)
+
+for(let data of values){
+
+ if(data.id==userid && data.pass==password){
+     console.log("congrats");
+     location.href="shop.html";
+ }
+
+}  })
+}
     
   
-    if(userid==password){
-        var users=firebase.database().ref('/users');
-        console.log(users);
-        users.on('value',(snapshot)=>{
-            let prods=snapshot.val();
-        console.log(prods);
-    })
+ //   if(userid==password){
+       
+        //     let prods=snapshot.val();
+        // console.log(prods);
+        // for(let user in prods){
+        //     console.log(user);
+        //     if(userid==user.id && password==user.pass){
+        //         location.href="dashboard.html";
+        //     }
+        // }
+      //  location.href="dashboard.html";
+  
         //redirect to dashboard
-        location.href="dashboard.html";
+     //  location.href="dashboard.html";
 
 
-    }
-    else{
-        let message="Invalid username or password";
-        //print on screen
-        document.getElementById('error').innerHTML=message;
-    }
+  //  }
+    // else{
+    //     let message="Invalid username or password";
+    //     //print on screen
+    //     document.getElementById('error').innerHTML=message;
+    // }
 }
 //signout
 function signout(){
