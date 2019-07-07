@@ -2,6 +2,12 @@ function doLogin(){
     var userid=document.getElementById('userid').value;
     var password=document.getElementById('password').value;;
     if(userid==password){
+        var users=firebase.database().ref('online-shopping-f3553/users');
+        console.log(users);
+        users.on('value',(snapshot)=>{
+            let prods=snapshot.val();
+        console.log(prods);
+        })
         //redirect to dashboard
         location.href="dashboard.html";
 
