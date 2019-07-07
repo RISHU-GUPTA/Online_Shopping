@@ -1,13 +1,15 @@
 function doLogin(){
     var userid=document.getElementById('userid').value;
-    var password=document.getElementById('password').value;;
+    var password=document.getElementById('password').value;
+    
+  
     if(userid==password){
         var users=firebase.database().ref('/users');
         console.log(users);
         users.on('value',(snapshot)=>{
             let prods=snapshot.val();
         console.log(prods);
-        })
+    })
         //redirect to dashboard
         location.href="dashboard.html";
 
@@ -32,9 +34,25 @@ function doSignup(){
         user[key]=document.getElementById(key).value;
     }
     console.log("user object got value",user);
-    useroperation.add(user);
-    var userarray=useroperation.user;
-    for(let user of userarray){
-        firebase.database().ref('/users/user '+user.id).set(user);
-    }
+    // useroperation.add(user);
+    // var userarray=useroperation.user;
+    // for(let user of userarray){
+    //  var promise=  firebase.database().ref('/users/'+user.id).set(user);
+    //  promise.then(data=>{
+    //     alert("Record Added");
+    // }).catch(err=>{
+    //     alert("NOt Added Error Occur");
+    //     console.log(err);
+    // })
+    // }
+
+    var promise=  firebase.database().ref('/users/'+user.id).set(user);
+     promise.then(data=>{
+        alert("Record Added");
+    }).catch(err=>{
+        alert("NOt Added Error Occur");
+        console.log(err);
+    })
+    
+
    }
