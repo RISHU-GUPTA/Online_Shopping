@@ -3,6 +3,7 @@ window.addEventListener("load",init); // loads when window ready
 var auto;
 function init(){
   showToUsers();
+  
   registerEvents();
    auto= autoGen();
    console.log(auto);
@@ -145,25 +146,29 @@ function showProduct(product){
      //color.style.display='inline';
      var but=document.createElement('button');
      but.innerText="Add To Cart";
-     but.setAttribute("id","addtocart");
+     but.setAttribute("class","addtocart");
      div1.appendChild(name);
     div1.appendChild(desc);
      div1.appendChild(price);
      div1.appendChild(color);
      div1.appendChild(but);
     div.appendChild(div1);
+    var cartbuttons=document.querySelectorAll('.addtocart');
+    cartbuttons.forEach(function(item){
+      item.addEventListener('click',addCart);
+    });
   
-}
+  }
 var cartcount=0;
 function addCart() {
-  
   ++cartcount;
   console.log(cartcount);
-  document.querySelector('#cartcount').value=cartcount;
+  
+  document.querySelector('#cartcount').innerText=cartcount;
 }
 
 function registerEvents(){
-document.getElementById('addtocart').addEventListener('click',addCart);
+  
 document.getElementById('savetoserver').addEventListener('click',saveToServer);
 document.getElementById('loadfromserver').addEventListener('click',loadFromServer);
 document.getElementById('add').addEventListener('click',addProduct);
