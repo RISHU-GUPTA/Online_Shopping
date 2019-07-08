@@ -147,6 +147,7 @@ function showProduct(product){
      var but=document.createElement('button');
      but.innerText="Add To Cart";
      but.setAttribute("class","addtocart");
+     but.setAttribute('id',product.id);
      div1.appendChild(name);
     div1.appendChild(desc);
      div1.appendChild(price);
