@@ -164,9 +164,42 @@ var cartcount=0;
 function addCart() {
   ++cartcount;
   console.log(cartcount);
-  
   document.querySelector('#cartcount').innerText=cartcount;
+  var id=this.getAttribute('id');
+  console.log('id of prod is',id);
+  var obj=productOperations.edit(id);
+  // console.log('obj of prod clicked add to cart but is',obj);
+  printCart(obj);
 }
+
+function printCart(product){
+  console.log('obj of prod clicked add to cart but is',product);
+  var tbody= document.querySelector('#printcart');
+  console.log(tbody);
+var tr=tbody.insertRow();
+var index=0;
+for(let key in product){
+  if(key=='markForDelete'){
+    continue;
+}
+  if(key=='url'){
+    tr.insertCell(index).appendChild(createImage(product[key]));
+    index++;
+    continue;
+  }
+ if(key=='color'){
+    tr.insertCell(index).appendChild(createColor(product[key]));
+    index++;
+    continue;
+  }
+    tr.insertCell(index).innerText=product[key];
+  index++;
+}
+}
+
+
+
+
 
 function registerEvents(){
   
